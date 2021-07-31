@@ -1,3 +1,12 @@
+@font-face {
+    font-family: 'icomoon';
+    src: url('fonts/icomoon.eot?a9zl06');
+    src: url('fonts/icomoon.eot?a9zl06#iefix') format('embedded-opentype'), url('fonts/icomoon.ttf?a9zl06') format('truetype'), url('fonts/icomoon.woff?a9zl06') format('woff'), url('fonts/icomoon.svg?a9zl06#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+
 body {
     background-color: rgba(128, 128, 128, 0.692);
 }
@@ -40,6 +49,7 @@ header section label {
 }
 
 section h2 {
+    position: relative;
     font-size: 26px;
     font-weight: 700;
     color: black;
@@ -48,7 +58,9 @@ section h2 {
 
 #todocount,
 #donecount {
-    float: right;
+    position: absolute;
+    top: 10px;
+    right: 10px;
     display: inline-block;
     width: 16px;
     height: 20px;
@@ -59,13 +71,29 @@ section h2 {
     text-align: center
 }
 
-ol li,
-ul li {
+.clearall {
+    position: absolute;
+    top: 10px;
+    right: 50px;
+    width: 70px;
+    height: 30px;
+    font-size: 15px;
+    font-weight: 400;
+    color: #fff;
+    line-height: 30px;
+    text-align: center;
+    border: 1px solid #fff;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+section ol li,
+section ul li {
     width: 100%;
     padding: 5px 10px 5px 10px;
     margin: 5px 0;
     border-radius: 5px;
-    border-left: 5px solid skyblue;
+    border-left: 5px solid black;
     background-color: #fff;
     overflow: hidden;
 }
@@ -76,8 +104,8 @@ li a {
     float: left;
 }
 
-li input {
-    display: block;
+li input[type=checkbox] {
+    display: inline-block;
     width: 20px;
     height: 20px;
     margin-right: 10px;
@@ -91,10 +119,57 @@ li p {
 
 li a {
     float: right;
-    display: block;
-    border-top: 10px solid skyblue;
-    border-bottom: 10px solid skyblue;
-    border-right: 10px solid pink;
-    border-left: 10px solid pink;
-    border-radius: 5px;
+    font-family: 'icomoon';
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 19px;
+}
+
+li i {
+    float: right;
+    width: 16px;
+    height: 16px;
+    border: 2px solid skyblue;
+    border-radius: 10px;
+    /* background-color: skyblue; */
+}
+
+aside {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 350px;
+    height: 100%;
+    padding-top: 20px;
+    background-color: #fff;
+}
+
+aside li {
+    margin: 5px 0;
+    padding: 0 10px;
+    overflow: hidden;
+}
+
+aside li input[type=checkbox] {
+    width: 23px;
+    height: 23px;
+}
+
+aside li textarea {
+    width: 228px;
+    font-size: 18px;
+    font-weight: 700;
+    border: none;
+    outline: none;
+    resize: none;
+}
+
+aside li i {
+    width: 20px;
+    height: 20px;
+}
+
+aside li a {
+    font-size: 24px;
 }
